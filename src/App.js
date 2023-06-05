@@ -1,25 +1,55 @@
-import logo from './logo.svg';
 import './App.css';
-
+import LoginPage from "./views/Login"
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import MainFeed from './views/MainFeed';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import CustomNavBar from './components/NavBar';
+import AccountPage from './views/Account';
+import MyTickets from './views/Tickets'
+import EmployeeManagement from './views/EmployeeManagement';
+import EventCreation from './views/CreateEvent';
 function App() {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <MainFeed></MainFeed>,
+    },
+    {
+      path: "/account",
+      element: <AccountPage></AccountPage>,
+    },
+    {
+      path: "/my-tickets",
+      element: <MyTickets></MyTickets>,
+    },
+    {
+      path: "/login",
+      element: <LoginPage></LoginPage>,
+    },
+    {
+      path: "/my-corporation",
+      element: <EmployeeManagement></EmployeeManagement>,
+    },
+    {
+      path: "/new-event",
+      element: <EventCreation></EventCreation>,
+    },
+  ]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <CustomNavBar></CustomNavBar>
+     <RouterProvider router={router} />
+      <ToastContainer>         
+      </ToastContainer>
+    </>
   );
 }
+
+
 
 export default App;
