@@ -22,8 +22,15 @@ function CustomNavBar(args) {
           </Nav>
           <Nav className="me-3" navbar>
             <NavItem>
-              <NavLink href="https://github.com/reactstrap/reactstrap">
+              <NavLink href="/statistics">
                 Statistics
+              </NavLink>
+            </NavItem>
+          </Nav>
+          <Nav className="me-3" navbar>
+            <NavItem>
+              <NavLink href="/logs">
+                Logs
               </NavLink>
             </NavItem>
           </Nav>
@@ -48,7 +55,13 @@ function CustomNavBar(args) {
               </NavLink>
             </NavItem>
           </Nav>
-          <Button>Logout</Button>
+          <Nav className="me-3" navbar>
+            <NavItem>
+              <NavLink href="/login">
+                <Button onClick={()=>localStorage.removeItem("token")}>Logout</Button>
+              </NavLink>
+            </NavItem>
+          </Nav>
       </Navbar>
     </div>
   );

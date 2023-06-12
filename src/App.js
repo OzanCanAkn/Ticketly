@@ -13,6 +13,8 @@ import AccountPage from './views/Account';
 import MyTickets from './views/Tickets'
 import EmployeeManagement from './views/EmployeeManagement';
 import EventCreation from './views/CreateEvent';
+import Logs from './views/Logs';
+
 function App() {
   const router = createBrowserRouter([
     {
@@ -38,6 +40,13 @@ function App() {
     {
       path: "/new-event",
       element: <EventCreation></EventCreation>,
+    },{
+      path: "/statistics",
+      element: <EmployeeManagement></EmployeeManagement>,
+    },
+    {
+      path: "/logs",
+      element: <Logs></Logs>,
     },
   ]);
   return (

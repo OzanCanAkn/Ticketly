@@ -45,7 +45,6 @@ const EmployeeManagement = () => {
     };
 
     useEffect(() => {
-        
         fetchEmployees();
         fetchUsers();
     }, []);

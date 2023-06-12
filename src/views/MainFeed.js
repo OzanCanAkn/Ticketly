@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { toast } from 'react-toastify';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
-
+import EventStatModal from '../components/EventsStatsModal'
 const MainFeed = () => {
   const [modalData, setModalData] = useState({})
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -182,6 +182,8 @@ console.log(events)
                    
                   </CardText>
                   <Button onClick={() => openModal(ticket)} color="primary">Book Now</Button>
+                  <EventStatModal eventId={ticket.eventId}></EventStatModal>
+
                 </CardBody>
               </Card>
             </Row>

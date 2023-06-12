@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Button, Form, FormGroup, Label, Input, Container } from 'reactstrap';
 import axios from 'axios';
 import { useDropzone } from 'react-dropzone';
+import { toast } from 'react-toastify';
 
 const EventCreation = () => {
     const [eventDescription, setEventDescription] = useState('');
@@ -79,6 +80,7 @@ const EventCreation = () => {
               "Authorization": `Bearer ${localStorage.getItem('token')}`
             }
           }); // replace with your actual endpoint
+          toast("succesfully reserved")
         setEventDescription('');
         setEventDate('');
         setEventSiteId('');
